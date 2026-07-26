@@ -146,7 +146,14 @@ def enviar_telegram(mensagem):
     resposta.raise_for_status()
 
 
+def diagnosticar_bot():
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getMe"
+    resposta = requests.get(url, timeout=30)
+    print(f"Info do bot: {resposta.text}")
+
+
 def main():
+    diagnosticar_bot()
     dados = buscar_previsao()
     mensagem = montar_mensagem(dados)
     enviar_telegram(mensagem)
