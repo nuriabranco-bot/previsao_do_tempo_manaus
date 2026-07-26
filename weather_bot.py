@@ -141,6 +141,8 @@ def montar_mensagem(dados):
 def enviar_telegram(mensagem):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     resposta = requests.post(url, json={"chat_id": TELEGRAM_CHAT_ID, "text": mensagem}, timeout=30)
+    if not resposta.ok:
+        print(f"Erro do Telegram: {resposta.text}")
     resposta.raise_for_status()
 
 
