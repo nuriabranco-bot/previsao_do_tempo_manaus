@@ -32,7 +32,7 @@ WEATHER_CODES = {
 
 
 def buscar_previsao():
-    url = "https://api.open-meteo.com/v1/forecast"
+    url = "https://api.open-meteo-QUEBRADO-DE-PROPOSITO.invalid/v1/forecast"
     params = {
         "latitude": LATITUDE,
         "longitude": LONGITUDE,
